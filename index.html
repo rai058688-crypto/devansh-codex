@@ -1,186 +1,96 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devansh Codex</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Courier New', monospace;
-      background: black;
-      color: #00ff00;
-      overflow-x: hidden;
-    }/* Matrix Background */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-header {
-  background: #111;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid red;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 5px red; }
-  to { box-shadow: 0 0 20px red; }
-}
-
-header h1 {
-  color: red;
-  text-shadow: 0 0 10px red;
-}
-
-nav a {
-  color: #00ff00;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: red;
-}
-
-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.box {
-  border: 1px solid #00ff00;
-  padding: 20px;
-  margin: 20px auto;
-  width: 80%;
-  box-shadow: 0 0 10px #00ff00;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-footer {
-  background: #111;
-  text-align: center;
-  padding: 20px;
-  border-top: 2px solid red;
-}
-
-.btn {
-  background: black;
-  border: 1px solid red;
-  color: red;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: red;
-  color: black;
-}
-
-.typing {
-  border-right: 2px solid #00ff00;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink 0.8s infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devansh Codex</title>
+<style>
+body{margin:0;font-family:monospace;background:black;color:#00ff00}
+canvas{position:fixed;top:0;left:0;z-index:-1}
+header{background:#111;padding:20px;text-align:center;border-bottom:2px solid red}
+h1{color:red}
+nav a{color:#0f0;margin:10px;text-decoration:none}
+section{padding:40px;text-align:center}
+.box{border:1px solid #0f0;padding:20px;margin:20px auto;width:85%;box-shadow:0 0 10px #0f0}
+.btn{border:1px solid red;background:black;color:red;padding:10px;cursor:pointer}
+input,textarea{width:80%;padding:10px;margin:10px;background:black;border:1px solid #0f0;color:#0f0}
+.hidden{display:none}
+</style>
 </head>
-<body><canvas id="matrix"></canvas>
-
-<header>
-  <h1>DEVANSH CODEX</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<body>
+<canvas id="matrix"></canvas><header>
+<h1>DEVANSH CODEX</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<a href="#login">Login</a>
+</nav>
 </header><section id="home">
-  <h2 class="typing">Welcome to Devansh Codex</h2>
-  <div class="box">
-    <p>Hacker Style Developer Website</p>
-    <button class="btn" onclick="alert('Access Granted!')">Enter System</button>
-  </div>
-</section><section id="about">
-  <h2>About</h2>
-  <div class="box">
-    <p>This website is designed with a hacker-style UI using red and green theme.</p>
-  </div>
+<h2>Welcome Developer</h2>
+<div class="box">
+<p>Advanced Hacker UI Website</p>
+<button class="btn" onclick="playSound()">Enter System</button>
+</div>
 </section><section id="services">
-  <h2>Services</h2>
-  <div class="box">
-    <p>✔ Website Development (Static & Dynamic)</p>
-    <p>✔ UI/UX Design (Modern + Hacker Style)</p>
-    <p>✔ Landing Pages</p>
-    <p>✔ Portfolio Websites</p>
-    <p>✔ Basic Web Apps</p>
-    <br>
-    <p><b>Agar aapko inme se koi bhi service chahiye, to hume contact kare.</b></p>
-  </div>
+<h2>Services</h2>
+<div class="box">
+<p>✔ Website Development</p>
+<p>✔ UI/UX Design</p>
+<p>✔ Landing Pages</p>
+<p>✔ Portfolio Sites</p>
+<p><b>Service ke liye contact kare</b></p>
+</div>
+</section><section id="projects">
+<h2>Projects Showcase</h2>
+<div class="box">
+<p>Project 1: E-commerce UI</p>
+<p>Project 2: Portfolio Website</p>
+<p>Project 3: Hacker Theme UI</p>
+</div>
 </section><section id="contact">
-  <h2>Contact Me</h2>
-  <div class="box">
-    <p>Email: devxhacker72@gmail.com</p>
-    <p>Telegram: @Devansh_Codex</p>
-    <br>
-    <p><b>Project ke liye ya website banwane ke liye directly contact kare.</b></p>
-  </div>
+<h2>Contact</h2>
+<div class="box">
+<form onsubmit="sendMail(event)">
+<input type="text" placeholder="Your Name" required><br>
+<input type="email" id="email" placeholder="Your Email" required><br>
+<textarea id="msg" placeholder="Your Message" required></textarea><br>
+<button class="btn" type="submit">Send</button>
+</form>
+<p>Email: devxhacker72@gmail.com</p>
+<p>Telegram: @Devansh_Codex</p>
+</div>
+</section><section id="login">
+<h2>Admin Login</h2>
+<div class="box">
+<input type="text" id="user" placeholder="Username"><br>
+<input type="password" id="pass" placeholder="Password"><br>
+<button class="btn" onclick="login()">Login</button>
+</div>
+</section><section id="admin" class="hidden">
+<h2>Admin Panel</h2>
+<div class="box">
+<p>Welcome Admin 🎯</p>
+<p>Yaha se tum apne projects aur content manage kar sakte ho (frontend demo).</p>
+</div>
 </section><footer>
-  <p>© 2026 Devansh Codex</p>
-</footer><script>
-  // Matrix Effect
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
+<p>© Devansh Codex</p>
+</footer><audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+<script>
+// Matrix
+const c=document.getElementById("matrix");const x=c.getContext("2d");c.height=window.innerHeight;c.width=window.innerWidth;let l="01DEV";let f=14;let col=c.width/f;let d=[];for(let i=0;i<col;i++)d[i]=1;function draw(){x.fillStyle="rgba(0,0,0,0.05)";x.fillRect(0,0,c.width,c.height);x.fillStyle="#0f0";x.font=f+"px monospace";for(let i=0;i<d.length;i++){let t=l[Math.floor(Math.random()*l.length)];x.fillText(t,i*f,d[i]*f);if(d[i]*f>c.height&&Math.random()>0.975)d[i]=0;d[i]++}}setInterval(draw,33);
 
-  const letters = '01DEVANSHCODEX';
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
+// Sound
+function playSound(){document.getElementById("sound").play()}
 
-  const drops = [];
-  for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
-  }
+// Fake login
+function login(){let u=document.getElementById("user").value;let p=document.getElementById("pass").value;
+if(u==="admin" && p==="1234"){document.getElementById("admin").classList.remove("hidden");alert("Login Success")}
+else{alert("Wrong Credentials")}}
 
-  function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = '#0F0';
-    ctx.font = fontSize + 'px monospace';
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = letters[Math.floor(Math.random() * letters.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 33);
+// Contact form (mailto)
+function sendMail(e){e.preventDefault();let email=document.getElementById("email").value;let msg=document.getElementById("msg").value;
+window.location.href=`mailto:devxhacker72@gmail.com?subject=Contact from ${email}&body=${msg}`}
 </script></body>
 </html>
